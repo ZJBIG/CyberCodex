@@ -1,0 +1,22 @@
+# Local application, launcher binaries and personal profile.
+/App-*/
+/CursorGuard-*/
+/Profile/
+*.asar
+*.asar.official
+__pycache__/
+*.py[cod]
+
+# Publish only the seven assets used by the current theme.
+/ThemeTools/cyberpunk-assets/*
+!/ThemeTools/cyberpunk-assets/Cyberpunk/
+/ThemeTools/cyberpunk-assets/Cyberpunk/*
+!/ThemeTools/cyberpunk-assets/Cyberpunk/Textures/
+/ThemeTools/cyberpunk-assets/Cyberpunk/Textures/*
+!/ThemeTools/cyberpunk-assets/Cyberpunk/Textures/UI_BackgroundMain.BGPlanet@3.jpg
+!/ThemeTools/cyberpunk-assets/Cyberpunk/Textures/UI_BackgroundMain.BGPlanet@8.jpg
+!/ThemeTools/cyberpunk-assets/Cyberpunk/Textures/UI_BackgroundMain.BGPlanet.webm
+!/ThemeTools/cyberpunk-assets/Cyberpunk/Textures/UI_BackgroundMain.BGPlanet@2.webm
+!/ThemeTools/cyberpunk-assets/Cyberpunk/Textures/UI_BackgroundMain.BGPlanet@3.webm
+!/ThemeTools/cyberpunk-assets/Cyberpunk/Textures/UI_BackgroundMain.BGPlanet@4.webm
+!/ThemeTools/cyberpunk-assets/Cyberpunk/Textures/UI_BackgroundMain.BGPlanet@5.webm

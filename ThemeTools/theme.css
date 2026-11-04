@@ -1,0 +1,254 @@
+
+/* CYBERCODEX_READABLE_NEON_V10: readable palette with rotating background. */
+:root, [data-theme] {
+  color-scheme: dark;
+  --color-surface: #1c112c !important;
+  --color-surface-secondary: #251636 !important;
+  --color-surface-tertiary: #2d1c40 !important;
+  --color-surface-elevated: #2b193e !important;
+  --color-surface-elevated-secondary: #35204b !important;
+  --color-surface-canvas: #190f27 !important;
+  --color-text: #eee5f8 !important;
+  --color-text-emphasis: #fff8ff !important;
+  --color-text-prose: #f3ebfb !important;
+  --color-text-secondary: #cdbbdc !important;
+  --color-text-tertiary: #ae9abd !important;
+  --color-text-inverse: #fff8ff !important;
+  --color-text-primary-solid: #fff8ff !important;
+  --color-background-primary-soft: #352047 !important;
+  --color-background-primary-soft-hover: #442858 !important;
+  --color-background-primary-soft-active: #523066 !important;
+  --color-background-primary-soft-alpha: rgba(211, 113, 248, .12) !important;
+  --color-background-primary-ghost-hover: rgba(211, 113, 248, .16) !important;
+  --color-background-primary-ghost-active: rgba(211, 113, 248, .24) !important;
+  --color-background-secondary-soft-alpha: rgba(211, 113, 248, .12) !important;
+  --color-background-primary-solid: #8d3fc1 !important;
+  --color-background-primary-solid-hover: #a74cda !important;
+  --color-background-primary-solid-active: #7133a6 !important;
+  --color-border: rgba(213, 113, 247, .32) !important;
+  --color-border-subtle: rgba(213, 113, 247, .18) !important;
+  --color-border-strong: rgba(231, 151, 255, .52) !important;
+  --color-ring: #d966fa !important;
+  --color-token-foreground: #f3ebfb !important;
+  --color-token-text-primary: #fff8ff !important;
+  --color-token-text-secondary: #cdbbdc !important;
+  --color-token-text-tertiary: #ae9abd !important;
+  --color-token-description-foreground: #c0add1 !important;
+  --color-token-main-surface-primary: #1c112c !important;
+  --color-token-side-bar-background: #211331 !important;
+  --color-token-bg-primary: #251636 !important;
+  --color-token-bg-secondary: #2d1c40 !important;
+  --color-token-bg-tertiary: #39234d !important;
+  --color-token-dropdown-background: #2b193e !important;
+  --color-token-dropdown-foreground: #fff8ff !important;
+  --color-token-border: rgba(213, 113, 247, .32) !important;
+  --color-token-primary: #d966fa !important;
+  --color-token-list-hover-background: rgba(193, 82, 238, .22) !important;
+  --color-token-input-background: #2b193e !important;
+  --color-token-input-foreground: #fff8ff !important;
+  --color-token-input-placeholder-foreground: #ad9abb !important;
+  --vscode-foreground: #f3ebfb !important;
+  --vscode-descriptionForeground: #cdbbdc !important;
+  --vscode-editor-background: #1c112c !important;
+  --vscode-editor-foreground: #f3ebfb !important;
+  --vscode-input-background: #2b193e !important;
+  --vscode-input-foreground: #fff8ff !important;
+  --vscode-dropdown-background: #2b193e !important;
+  --vscode-dropdown-foreground: #fff8ff !important;
+  --vscode-focusBorder: #d966fa !important;
+  --vscode-button-background: #8d3fc1 !important;
+  --vscode-button-foreground: #fff8ff !important;
+  --color-token-button-background: #8d3fc1 !important;
+  --color-token-button-foreground: #fff8ff !important;
+  --color-token-on-accent: #fff8ff !important;
+  --color-codex-description: #cdbbdc !important;
+}
+html:not(.compact-window) [class~="group/settings"] {
+  --color-background-panel: rgba(45, 25, 65, .92) !important;
+}
+html:not(.compact-window), html:not(.compact-window) body {
+  background: #190f27 url('${city_background}') center / cover fixed !important;
+  color: #f3ebfb;
+}
+html:not(.compact-window) body { isolation: isolate; }
+html:not(.compact-window) body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(rgba(19, 8, 33, .72), rgba(19, 8, 33, .78));
+}
+html:not(.compact-window) #cyberpunk-dynamic-background,
+html:not(.compact-window) #cyberpunk-dynamic-background-next {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+  pointer-events: none;
+  transition: opacity 1.4s ease;
+}
+html.compact-window #cyberpunk-dynamic-background,
+html.compact-window #cyberpunk-dynamic-background-next { display: none !important; }
+html:not(.compact-window) #root {
+  position: relative;
+  z-index: 0;
+  background: transparent !important;
+}
+html:not(.compact-window) aside {
+  border-right: 1px solid rgba(223, 117, 255, .36) !important;
+  box-shadow: 8px 0 28px rgba(179, 54, 237, .11) !important;
+}
+html:not(.compact-window) aside,
+html:not(.compact-window) [data-pip-obstacle="thread-summary-panel"] > div > .bg-token-dropdown-background,
+html:not(.compact-window) [data-codex-composer-root] .composer-surface-chrome {
+  background: linear-gradient(155deg, rgba(37, 16, 57, .42), rgba(22, 8, 38, .38)) !important;
+  backdrop-filter: blur(12px) saturate(115%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(115%) !important;
+}
+html:not(.compact-window) .app-header-tint {
+  background: rgba(29, 12, 45, .96) !important;
+  border-bottom: 1px solid rgba(223, 117, 255, .20) !important;
+}
+html:not(.compact-window) main { background: transparent !important; }
+html:not(.compact-window) [data-pip-obstacle="thread-summary-panel"] > div > .bg-token-dropdown-background {
+  border: 1px solid rgba(223, 117, 255, .40) !important;
+  box-shadow: 0 12px 35px rgba(8, 2, 18, .32), 0 0 18px rgba(194, 67, 242, .16) !important;
+}
+html:not(.compact-window) [data-pip-obstacle="thread-summary-panel"] section,
+html:not(.compact-window) [data-pip-obstacle="thread-summary-panel"] section > header {
+  background: transparent !important;
+}
+html:not(.compact-window) [data-codex-composer-root] {
+  background: transparent !important;
+}
+html:not(.compact-window) [data-codex-composer-root] .composer-surface-chrome {
+  border: 1px solid rgba(218, 105, 255, .22) !important;
+  box-shadow: 0 12px 32px rgba(8, 2, 17, .16), inset 0 1px 0 rgba(243, 210, 255, .08) !important;
+}
+html:not(.compact-window) [data-codex-composer-root] .composer-surface-chrome :is(textarea, [contenteditable="true"], .ProseMirror) {
+  background: transparent !important;
+}
+html:not(.compact-window) [data-codex-composer-root] :is(textarea, input, [contenteditable="true"], .ProseMirror) {
+  cursor: text !important;
+  caret-color: #f7e8ff !important;
+}
+html:not(.compact-window) :is(input:not([type="checkbox"]):not([type="radio"]), textarea, [contenteditable="true"], [role="textbox"], .ProseMirror) {
+  caret-color: #ef79ff !important;
+}
+html:not(.compact-window) [data-codex-composer-root] .text-codex-description {
+  color: #d8c5e8 !important;
+}
+html:not(.compact-window) [data-codex-composer-root] [data-composer-expanded-top-tray] {
+  --composer-top-tray-background: rgba(39, 19, 57, .96) !important;
+  --composer-top-tray-border: rgba(223, 117, 255, .36) !important;
+  background: rgba(39, 19, 57, .96) !important;
+  color: #f5eaff !important;
+}
+html:not(.compact-window) [data-codex-composer-root] [data-composer-expanded-top-tray] * {
+  color: #f5eaff !important;
+}
+html:not(.compact-window) [role="dialog"],
+html:not(.compact-window) [role="menu"],
+html:not(.compact-window) [role="tooltip"],
+html:not(.compact-window) [data-radix-popper-content-wrapper] > * {
+  background-color: #2b193e !important;
+  border-color: rgba(223, 117, 255, .45) !important;
+  box-shadow: 0 18px 42px rgba(7, 1, 17, .5), 0 0 18px rgba(194, 67, 242, .15) !important;
+}
+html:not(.compact-window) [role="menu"] *,
+html:not(.compact-window) [role="tooltip"] *,
+html:not(.compact-window) [data-radix-popper-content-wrapper] > * * {
+  color: #f5eaff !important;
+}
+html:not(.compact-window) aside [aria-current="page"],
+html:not(.compact-window) aside button:hover,
+html:not(.compact-window) aside [role="button"]:hover {
+  background: rgba(186, 70, 227, .24) !important;
+  box-shadow: inset 0 0 0 1px rgba(231, 145, 255, .3), 0 0 12px rgba(188, 70, 231, .15) !important;
+}
+html:not(.compact-window) button:hover,
+html:not(.compact-window) [role="button"]:hover {
+  filter: drop-shadow(0 0 7px rgba(216, 96, 253, .25));
+}
+html:not(.compact-window) [data-thread-user-message-navigation-rail-list] [class*="_Marker_"] {
+  color: #e7cfef !important;
+  opacity: .86 !important;
+}
+html:not(.compact-window) [data-thread-user-message-navigation-rail-list] [class*="_Marker_"]::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  transform: translateY(-50%);
+  border-radius: 1px;
+  background: #f3dfff;
+  box-shadow: 0 0 5px rgba(229, 151, 255, .6);
+  pointer-events: none;
+}
+html:not(.compact-window) [data-thread-user-message-navigation-rail-list] button:is(:hover, :focus-visible, [data-scrub-target]) [class*="_Marker_"] {
+  --marker-progress: 1 !important;
+  color: #fff8ff !important;
+  opacity: 1 !important;
+}
+html:not(.compact-window) [data-thread-user-message-navigation-rail-list] button:is(:hover, :focus-visible, [data-scrub-target]) [class*="_MarkerLine_"] {
+  background-color: #fff8ff !important;
+  box-shadow: 0 0 7px rgba(229, 151, 255, .85);
+}
+html:not(.compact-window) [data-user-message-bubble]:not([class*="_otherUserMessage_"]) {
+  --color-background-user-message: #613181 !important;
+  --color-text-user-message: #fff8ff !important;
+  background-color: #613181 !important;
+  color: #fff8ff !important;
+  border: 1px solid rgba(226, 151, 255, .45);
+}
+html:not(.compact-window) section .overflow-hidden.rounded-2xl.border button,
+html:not(.compact-window) button.bg-token-foreground,
+html:not(.compact-window) button.cybercodex-review-action {
+  background: #7133a6 !important;
+  color: #fff8ff !important;
+  border: 1px solid rgba(231, 151, 255, .65) !important;
+}
+html:not(.compact-window) section .overflow-hidden.rounded-2xl.border button *,
+html:not(.compact-window) button.bg-token-foreground *,
+html:not(.compact-window) button.cybercodex-review-action * {
+  color: #fff8ff !important;
+}
+html:not(.compact-window) [data-feature="game-source"] {
+  position: relative;
+  box-sizing: border-box;
+  width: min(100%, 960px);
+  min-height: 180px;
+  margin: 16px auto 8px;
+  padding: 42px 32px;
+  align-items: center;
+  border: 1px solid rgba(222, 118, 255, .7);
+  border-radius: 24px;
+  background: linear-gradient(90deg, rgba(22, 7, 39, .94), rgba(31, 8, 52, .76), rgba(16, 5, 29, .35)), url('${background}') center 38% / cover no-repeat;
+  box-shadow: 0 14px 40px rgba(24, 5, 41, .35), 0 0 24px rgba(190, 64, 246, .3);
+  color: #f5ecff !important;
+  text-shadow: 0 0 6px rgba(142, 231, 255, .8), 0 0 18px rgba(210, 92, 255, .7), 0 2px 8px #13051f;
+}
+html:not(.compact-window) [data-feature="game-source"] > * { visibility: hidden !important; }
+html:not(.compact-window) [data-feature="game-source"]::after {
+  content: "NEON CODE PROTOCOL\A在夜色中编译明天";
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: pre-line;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: .025em;
+  color: #eefbff !important;
+  text-shadow: -1px 0 rgba(255, 96, 222, .6), 1px 0 rgba(98, 226, 255, .65), 0 0 9px rgba(94, 221, 255, .55), 0 0 20px rgba(208, 92, 255, .45), 0 3px 10px #13051f;
+  pointer-events: none;
+}
+::selection { background: rgba(218, 85, 255, .42); }
+::-webkit-scrollbar-thumb { background: linear-gradient(#df65ff, #5acfff) !important; border-radius: 999px; }
